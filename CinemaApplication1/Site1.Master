@@ -1,0 +1,128 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CinemaApplication1.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/StyleSheet.css">
+    <link rel="stylesheet" href="~/css/StyleSheet2.css">
+    <link href="fontawesome-free-5.15.3-web/css/all.css" rel="stylesheet" />
+    <link href="bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.js"></script>
+    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <style>
+        /*        li a, .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }*/
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            min-width: 160px;
+            background-color: #212529;
+        }
+
+            .dropdown-content a {
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-toggleable-sm bg-dark navbar-dark border-bottom box-shadow">
+                <div class="container">
+                    <a class="navbar-brand " href="/Homepage.aspx">
+                        <img src="image/CompanyLogo4.png" alt="Company Logo" width="110" height="30" /></a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <br />
+                    <div class="navbar-collapse collapse d-sm-inline-flex ml-auto" >
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="/Homepage.aspx">Home</a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="nav-link text-light" href="/Movie.aspx" id="dropbtn">Movie</a>
+                                <%--                                <div class="dropdown-content">
+                                    <a class="nav-link text-light" href="/MovieH.aspx">Hottest</a>
+                                    <a class="nav-link text-light" href="/MovieN.aspx">New Arrival</a>
+                                    <a class="nav-link text-light" href="/MovieP.aspx">Promotion</a>
+                                </div>--%>
+                            </li>
+<%--                            <li class="dropdown">
+                                <a class="nav-link text-light" href="/MemberLogin.aspx" id="dropbtn1">Admin Panel</a>
+                                <div class="dropdown-content">
+                                    <a class="nav-link text-light" href="MovieInsert.aspx">Movie Insert</a>
+                                    <a class="nav-link text-light" href="MovieDetails.aspx">Movie Details</a>
+                                </div>
+                            </li>--%>
+                            <li class="nav-item">
+                                <a class="nav-link text-light" href="/AboutUs.aspx">About Us</a>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink ID="cartPage" NavigateUrl="~/Cart.aspx" class="nav-link text-light" runat="server">Cart</asp:HyperLink>
+                            </li>
+                            <li class="nav-item">
+                                <asp:HyperLink ID="ticketBot" NavigateUrl="~/TicketBot.aspx" class="nav-link text-light" runat="server">Help</asp:HyperLink>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav float-right">
+                            <li class="nav-item clearfix">
+                                <asp:HyperLink ID="adminPanel" NavigateUrl="/AdminPanel.aspx" class="btn btn-dark text-light btn-outline-warning" runat="server"></asp:HyperLink>
+                            </li>
+                            <li class="nav-item clearfix">
+                                <asp:HyperLink ID="userPanel" NavigateUrl="/MemberPanel.aspx" class="btn btn-dark text-light btn-outline-warning" runat="server"></asp:HyperLink>
+                            </li>
+                            <li class="nav-item clearfix">
+                                <asp:HyperLink ID="LoginHome" NavigateUrl="~/MemberLogin.aspx" class="btn btn-dark text-light btn-outline-warning" runat="server">Login</asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                            </li>
+                            <li class="nav-item clearfix">
+                                <asp:HyperLink ID="RegisterHome" class="btn btn-dark text-light btn-outline-warning" NavigateUrl="~/MemberRegister.aspx" runat="server">Sign Up</asp:HyperLink>&nbsp;&nbsp;&nbsp;
+                            </li>
+                            <li class="nav-item clearfix">
+                                <asp:Button ID="btnLogoutHome" runat="server" class="btn btn-dark text-light btn-outline-warning" Text="Logout" OnClick="btnLogoutHome_Click" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="main" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="border-top footer bg-dark text-light ">
+            <div class="container">
+                &copy; 2021 - Online Ticket - <a class="text-warning text-decoration-none" href="/ContactUs.aspx">Contact Us  &nbsp;&nbsp;| </a> &nbsp;&nbsp;<a class="text-warning text-decoration-none" href="/Privacy.aspx">Privacy & Policy</a>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

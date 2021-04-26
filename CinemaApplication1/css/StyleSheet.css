@@ -1,0 +1,18 @@
+﻿.loginBackground {
+    background-image:url(../image/cinemaBk1.jpg);
+    background-size : cover;
+    background-repeat : no-repeat;
+    background-attachment : fixed;
+}
+.signUpBackground {
+    background-image: url(image/cinemaBk3.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.adminLoginBackground {
+    background-image: url(image/cinemaBk4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
